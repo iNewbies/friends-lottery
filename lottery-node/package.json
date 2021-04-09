@@ -1,0 +1,21 @@
+{
+  "name": "lottery-node",
+  "version": "1.0.0",
+  "description": "lottery",
+  "main": "lottery.ts",
+  "scripts": {
+    "start": "tsc && node lottery.js"
+  },
+  "author": "north",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "@types/shuffle-array": "^1.0.0",
+    "install": "^0.13.0",
+    "npm": "^7.9.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "shuffle-array": "^1.0.1"
+  }
+}
