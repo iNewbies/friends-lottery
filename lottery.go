@@ -1,11 +1,11 @@
 package main
 
 import (
+	"crypto/rand"
 	"encoding/base64"
 	"fmt"
-	"math/rand"
+	"math/big"
 	"strings"
-	"time"
 )
 
 type dataType struct {
@@ -72,10 +72,9 @@ func main() {
 }
 
 func shuffle(slice []string) {
-	r := rand.New(rand.NewSource(time.Now().Unix()))
 	for n := len(slice); n > 0; n-- {
-		randIndex := r.Intn(n)
-		slice[n-1], slice[randIndex] = slice[randIndex], slice[n-1]
+		randIndex, _ := rand.Int(rand.Reader, big.NewInt(int64(n)))
+		slice[n-1], slice[randIndex.Int64()] = slice[randIndex.Int64()], slice[n-1]
 	}
 }
 
